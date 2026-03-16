@@ -33,8 +33,8 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400;700&family=Cormorant+Garamond:wght@600&family=Dancing+Script:wght@400;700&family=Inter:wght@400;700&family=Lora:wght@400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Raleway:wght@400;700&family=Roboto:wght@400;700&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
 
-  <script type="module" crossorigin src="/assets/index-D7xKzcOi.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CCPuPILN.css">
+  <script type="module" crossorigin src="/assets/index-91MGE4TT.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DHdlzQ-I.css">
 </head>
 
 <body class="bg-[#050505] h-screen overflow-hidden">
@@ -439,6 +439,30 @@
 								<div class="toggle-pill"></div>
 							</label>
 						</div>
+
+						<div class="p-3 bg-white/5 border border-white/5 rounded-2xl space-y-3">
+							<div class="flex items-center justify-between gap-4">
+								<div class="flex flex-col">
+									<span id="gta-icons-label" class="text-xs font-bold text-white">GTA Coordinate Icons</span>
+									<span id="gta-icons-subtext" class="text-[9px] text-slate-500">Scatter GTA map icons around the coordinate label</span>
+								</div>
+								<label class="relative inline-flex items-center cursor-pointer">
+									<input type="checkbox" id="show-gta-icons-toggle" class="sr-only peer">
+									<div class="toggle-pill"></div>
+								</label>
+							</div>
+
+							<div id="gta-icon-menu" class="space-y-3">
+								<div class="flex items-center justify-between gap-3">
+									<span id="gta-icon-preview-title" class="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">Current Icon Set</span>
+									<button id="gta-icon-shuffle-btn" type="button" class="px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-[10px] font-black uppercase tracking-[0.18em] text-white hover:bg-white/10 transition-colors">
+										Shuffle Icons
+									</button>
+								</div>
+
+								<div id="gta-icon-preview" class="grid grid-cols-6 gap-2"></div>
+							</div>
+						</div>
 					</div>
 
 					<div id="classic-typography-config" class="space-y-4 hidden">
@@ -583,6 +607,8 @@
 					<img id="stamp-image" src="./gpt-rstar.png" class="w-64 h-64 object-contain mb-2 drop-shadow-[0_0_25px_rgba(0,0,0,0.6)]" />
 					<span id="stamp-city" class="block w-64 text-center text-white font-black uppercase tracking-[0.2em] text-5xl drop-shadow-[0_8px_16px_rgba(0,0,0,0.8)]" style="font-family: 'Bebas Neue', sans-serif">CITY NAME</span>
 				</div>
+
+				<div id="gta-map-icons-layer" class="absolute inset-0 z-[8] pointer-events-none transition-opacity duration-300 opacity-0"></div>
 
 				<div id="poster-attribution" class="absolute bottom-4 right-4 z-20 text-[8px] opacity-30 pointer-events-none uppercase tracking-widest">© OpenStreetMap Contributors</div>
 			</div>
